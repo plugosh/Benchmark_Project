@@ -1,0 +1,4 @@
+PRETTY_NAME="Kali GNU/Linux Rolling"
+NAME="Kali GNU/Linux"
+VERSION_CODENAME="kali-rolling"
+VERSION="2020.3"
