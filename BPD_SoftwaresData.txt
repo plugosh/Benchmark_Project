@@ -1,0 +1,9 @@
+wireshark:
+  Zainstalowana: 3.2.6-1
+  Kandydująca:   3.4.0-1
+  Tabela wersji:
+     3.4.0-1 500
+        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
+ *** 3.2.6-1 100
+        100 /var/lib/dpkg/status
+#####################################
