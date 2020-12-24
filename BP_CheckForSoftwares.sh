@@ -1,3 +1,8 @@
 #!/bin/bash
-apt-cache policy wireshark > BPD_SoftwaresData.txt
+
+
+#TUTAJ PETLA CZYTAJACA PROGRAMY Z BPB_SOFTWARE LIST
+#ZAPIS ICH DO BPD_SOFTWAREDATA.TXT
+#ZAPISAC TRZEBA NAJLEPIEJ PIERWSZE 3 LINIJKI - NAZWA PROGRAMU, ZAINSTALOWANA WERSJA, AKTUALNA WERSJA
+
 echo "#####################################" >> BPD_SoftwaresData.txt
