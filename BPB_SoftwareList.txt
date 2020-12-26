@@ -1,15 +1,26 @@
-gufw		#firewall managment
-firejail	#application sandbox
-keepassx	#password manager
-clamav		#malware scanner
-rsync		#backup program
-wireshark	#network protocol analyzer
-nmap		#network exploration, security auditing
-chkrootkit	#rootkit infection scanner
-maltego		#intelligence and forensics
-sqlmap		#SQL penetration testing tool
-burpsuite	#application security testing software
-grabber		#web application scanner
-bed			#bruteforce exploit detector
-dotdotpwn	#fuzzer to discover traversal directory vulnerbilities
-OpenVas		#vulnerability scanning and managment
+gufw
+firejail
+keepassx
+clamav
+rsync
+wireshark
+nmap
+chkrootkit
+sqlmap
+burpsuite
+bed
+dotdotpwn
+openvas
+#gufw		firewall managment
+#firejail	application sandbox
+#keepassx	password manager
+#clamav		malware scanner
+#rsync		backup program
+#wireshark	network protocol analyzer
+#nmap		network exploration, security auditing
+#chkrootkit	rootkit infection scanner
+#sqlmap		SQL penetration testing tool
+#burpsuite	application security testing software
+#bed			bruteforce exploit detector
+#dotdotpwn	fuzzer to discover traversal directory vulnerbilities
+#openvas		vulnerability scanning and managment

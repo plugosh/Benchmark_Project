@@ -1,10 +1,9 @@
 #!/bin/bash
 chmod +x ./BP_* #making all BP_ project files as executeable
 
-./BP_CheckCurrentVersion.sh	#check current system version
+echo "Before using this program please use 'apt-get update' command"
 
-cat ./BPD_SystemVersionData.txt | grep "NAME="
-cat ./BPD_SystemVersionData.txt | grep "VERSION="
+./BP_CheckCurrentVersion.sh	#check current system version
 
 #./BP_CheckForSoftwares.sh #look for specific installed softwares
 
