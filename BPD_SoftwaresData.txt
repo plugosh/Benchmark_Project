@@ -1,97 +1,45 @@
 gufw:
   Zainstalowana: (brak)
   Kandydująca:   20.04.1-1
-  Tabela wersji:
-     20.04.1-1 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
-        500 http://http.kali.org/kali kali-rolling/main i386 Packages
 firejail:
   Zainstalowana: (brak)
   Kandydująca:   0.9.64-1
-  Tabela wersji:
-     0.9.64-1 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
 keepassx:
   Zainstalowana: (brak)
   Kandydująca:   2.0.3+git20190121.1682ab9-2.2
-  Tabela wersji:
-     2.0.3+git20190121.1682ab9-2.2 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
 clamav:
   Zainstalowana: (brak)
   Kandydująca:   0.103.0+dfsg-3
-  Tabela wersji:
-     0.103.0+dfsg-3 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
 rsync:
   Zainstalowana: 3.2.3-2
   Kandydująca:   3.2.3-2
-  Tabela wersji:
- *** 3.2.3-2 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
-        100 /var/lib/dpkg/status
 wireshark:
   Zainstalowana: 3.2.6-1
   Kandydująca:   3.4.0-1
-  Tabela wersji:
-     3.4.0-1 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
- *** 3.2.6-1 100
-        100 /var/lib/dpkg/status
 nmap:
   Zainstalowana: 7.80+dfsg1-5kali1
   Kandydująca:   7.91+dfsg1-1kali1
-  Tabela wersji:
-     7.91+dfsg1-1kali1 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
- *** 7.80+dfsg1-5kali1 100
-        100 /var/lib/dpkg/status
 chkrootkit:
   Zainstalowana: (brak)
   Kandydująca:   0.53-2
-  Tabela wersji:
-     0.53-2 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
 sqlmap:
   Zainstalowana: 1.4.9-1
   Kandydująca:   1.4.12-1
-  Tabela wersji:
-     1.4.12-1 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
-        500 http://http.kali.org/kali kali-rolling/main i386 Packages
- *** 1.4.9-1 100
-        100 /var/lib/dpkg/status
 burpsuite:
   Zainstalowana: 2020.8.1-0kali1
   Kandydująca:   2020.9.1-0kali1
-  Tabela wersji:
-     2020.9.1-0kali1 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
- *** 2020.8.1-0kali1 100
-        100 /var/lib/dpkg/status
 bed:
   Zainstalowana: (brak)
   Kandydująca:   0.5-1kali6
-  Tabela wersji:
-     0.5-1kali6 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
 dotdotpwn:
   Zainstalowana: (brak)
   Kandydująca:   3.0.2-0kali2
-  Tabela wersji:
-     3.0.2-0kali2 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
 openvas:
   Zainstalowana: (brak)
   Kandydująca:   20.8.0.0~kali3
-  Tabela wersji:
-     20.8.0.0~kali3 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
-        500 http://http.kali.org/kali kali-rolling/main i386 Packages
-tree:
-  Zainstalowana: 1.8.0-1+b1
-  Kandydująca:   1.8.0-1+b1
-  Tabela wersji:
- *** 1.8.0-1+b1 500
-        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
-        100 /var/lib/dpkg/status
+nmap:
+  Zainstalowana: 7.80+dfsg1-5kali1
+  Kandydująca:   7.91+dfsg1-1kali1
+cisco-torch:
+  Zainstalowana: (brak)
+  Kandydująca:   0.4b-1kali5

@@ -11,6 +11,8 @@ burpsuite
 bed
 dotdotpwn
 openvas
+nmap
+cisco-torch
 #gufw		firewall managment
 #firejail	application sandbox
 #keepassx	password manager
@@ -21,6 +23,8 @@ openvas
 #chkrootkit	rootkit infection scanner
 #sqlmap		SQL penetration testing tool
 #burpsuite	application security testing software
-#bed			bruteforce exploit detector
+#bed		bruteforce exploit detector
 #dotdotpwn	fuzzer to discover traversal directory vulnerbilities
-#openvas		vulnerability scanning and managment
+#openvas	vulnerability scanning and managment
+#nmap		network discovery and security auditing
+#cisco-torch	mass scanning, fingerprinting, and exploitation tool - cisco device scanner
