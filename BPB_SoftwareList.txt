@@ -13,18 +13,26 @@ dotdotpwn
 openvas
 nmap
 cisco-torch
-#gufw		firewall managment
-#firejail	application sandbox
-#keepassx	password manager
-#clamav		malware scanner
-#rsync		backup program
-#wireshark	network protocol analyzer
-#nmap		network exploration, security auditing
-#chkrootkit	rootkit infection scanner
-#sqlmap		SQL penetration testing tool
-#burpsuite	application security testing software
-#bed		bruteforce exploit detector
-#dotdotpwn	fuzzer to discover traversal directory vulnerbilities
-#openvas	vulnerability scanning and managment
-#nmap		network discovery and security auditing
+beef
+arp-scan
+braa
+maltego
+#gufw			firewall managment
+#firejail		application sandbox
+#keepassx		password manager
+#clamav			malware scanner
+#rsync			backup program
+#wireshark		network protocol analyzer
+#nmap			network exploration, security auditing
+#chkrootkit		rootkit infection scanner
+#sqlmap			SQL penetration testing tool
+#burpsuite		application security testing software
+#bed			bruteforce exploit detector
+#dotdotpwn		fuzzer to discover traversal directory vulnerbilities
+#openvas		vulnerability scanning and managment
+#nmap			network discovery and security auditing
 #cisco-torch	mass scanning, fingerprinting, and exploitation tool - cisco device scanner
+#beef			penetration testing tool that focuses on the web browser.
+#arp-scan		Address Resolution Protocol scanner
+#braa			mass snmp scanner
+#maltego		open-source intelligence and forensics

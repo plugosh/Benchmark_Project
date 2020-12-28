@@ -43,3 +43,15 @@ nmap:
 cisco-torch:
   Zainstalowana: (brak)
   Kandydująca:   0.4b-1kali5
+beef:
+  Zainstalowana: (brak)
+  Kandydująca:   1.2.0-1
+arp-scan:
+  Zainstalowana: 1.9.7-1
+  Kandydująca:   1.9.7-1
+braa:
+  Zainstalowana: (brak)
+  Kandydująca:   0.82-5
+maltego:
+  Zainstalowana: 4.2.12.13389-0kali1
+  Kandydująca:   4.2.14.13579-0kali1

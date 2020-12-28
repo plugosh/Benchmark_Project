@@ -1,4 +1,5 @@
 #!/bin/bash
+
 chmod +x ./BP_* #making all BP_ project files as executeable
 
 echo -e "                                    "
@@ -76,18 +77,24 @@ if [ $agubool == "false" ] ; then
 	fi
 fi
 
+#Checking system version
+
 if [ ! -e ./BP_CheckCurrentVersion.sh ] ; then
-	echo "Error. File 'BP_CheckCurrentVersion.sh' is not valid."
+	echo "\e[41mError. File 'BP_CheckCurrentVersion.sh' is not valid."
 	exit 0
 fi
 
 ./BP_CheckCurrentVersion.sh	#check current system version
 
-#./BP_CheckForSoftwares.sh #look for specific installed softwares
+#Checking for recomended softwares
 
 if [ ! -e ./BP_CheckForSoftwares.sh ] ; then
-	echo "Error. File 'BP_CheckForSoftwares.sh' is not valid."
+	echo "\e[41mError. File 'BP_CheckForSoftwares.sh' is not valid."
 	exit 0
 fi
 
 ./BP_CheckForSoftwares.sh
+
+echo -e "\e[34mScanning in progress. Please wait.\e[0m"
+
+./BP_SoftwareFiltering.sh

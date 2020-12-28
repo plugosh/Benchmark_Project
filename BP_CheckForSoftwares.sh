@@ -1,6 +1,22 @@
 #!/bin/bash
 
 
+if [ ! -e ./BPD_SoftwaresData.txt ] ; then
+	touch ./BPD_SoftwaresData.txt
+	chmod +w ./BPD_SoftwaresData.txt
+	if [ ! -w ./BPD_SoftwaresData.txt ] ; then
+		echo "Error. Can not write into BPD_SoftwaresData.txt file."
+		exit 0
+	fi
+
+else
+	chmod +w ./BPD_SoftwaresData.txt
+	if [ ! -w ./BPD_SoftwaresData.txt ] ; then
+		echo "Error. Can not write into BPD_SoftwaresData.txt file."
+		exit 0
+	fi
+fi
+
 #TUTAJ PETLA CZYTAJACA PROGRAMY Z BPB_SOFTWARE LIST
 SoftwareCount=`wc -l < ./BPB_SoftwareList.txt`
 
