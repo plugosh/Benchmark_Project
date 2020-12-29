@@ -22,3 +22,7 @@ for FILE in /etc/*release; do
   cat "$FILE" | grep "VERSION=" >> ./BPD_SystemVersionData.txt	#check current system version
 
 done
+
+#checking language
+
+cat /etc/default/locale >> ./BPD_SystemVersionData.txt
