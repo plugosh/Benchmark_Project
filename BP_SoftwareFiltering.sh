@@ -43,20 +43,27 @@ do
 		SoftNewVer=`sed -n ${SNV}p ./BPD_SoftwaresData.txt | cut -d ' ' -f4-`	#May be errors
 	fi
 
-	aSoftware[$[n-1]]="$SoftName"
-	aSoftInst[$[n-1]]="$SoftInsVer"
-	aSoftNewV[$[n-1]]="$SoftNewVer"
+
+	aSoftware[n-1]="$SoftName"
+	aSoftInst[n-1]="$SoftInsVer"
+	aSoftNewV[n-1]="$SoftNewVer"
 
 	#echo "${aSoftware[n-1]}"
 	#echo "${aSoftInst[n-1]}"
 	#echo "${aSoftNewV[n-1]}"
 
+
+	if [ ${aSoftInst[n-1]} == "(brak)" -o ${aSoftInst[n-1]} == "(none)" ] ; then	#PL and EN
+		echo "niezainstalowane dla ${aSoftware[n-1]}"
+	else
+		echo "${aSoftInst[n-1]} ${aSoftware[n-1]}"
+	fi
+
 done
 
-#	1	4	7	10
-#	1	2	3	4
-#
-#	2	5	8	11
-#
-#
-#sed -n 3p ./BPD_SoftwaresData.txt | cut -d ' ' -f6-
+	#PL:								EN:
+	#software 							software
+	#	Zainstalowana:	(brak)				Installed:	(none)
+	#	Kandydująca:	1.2.3.4				Candidate:	1.2.3.4
+	#or
+	#	Zainstalowana:	1.2.3.3				Installed:	1.2.3.3

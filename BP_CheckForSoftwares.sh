@@ -27,9 +27,3 @@ do
 	apt-cache policy `sed -n ${n}p ./BPB_SoftwareList.txt` | head -3 >> BPD_SoftwaresData.txt
 done
 
-	#PL:								EN:
-	#software 							software
-	#	Zainstalowana:	(brak)				Installed:	(none)
-	#	Kandydująca:	1.2.3.4				Candidate:	1.2.3.4
-	#or
-	#	Zainstalowana:	1.2.3.3				Installed:	1.2.3.3
