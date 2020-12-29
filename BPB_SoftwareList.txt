@@ -2,10 +2,10 @@ gufw
 firejail
 keepassx
 clamav
-rsync
 wireshark
 nmap
 chkrootkit
+rsync
 sqlmap
 burpsuite
 bed
@@ -21,10 +21,10 @@ maltego
 #firejail		application sandbox
 #keepassx		password manager
 #clamav			malware scanner
-#rsync			backup program
 #wireshark		network protocol analyzer
 #nmap			network exploration, security auditing
 #chkrootkit		rootkit infection scanner
+#rsync			backup program
 #sqlmap			SQL penetration testing tool
 #burpsuite		application security testing software
 #bed			bruteforce exploit detector

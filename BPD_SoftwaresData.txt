@@ -10,9 +10,6 @@ keepassx:
 clamav:
   Zainstalowana: (brak)
   Kandydująca:   0.103.0+dfsg-3
-rsync:
-  Zainstalowana: 3.2.3-2
-  Kandydująca:   3.2.3-2
 wireshark:
   Zainstalowana: 3.2.6-1
   Kandydująca:   3.4.0-1
@@ -22,6 +19,9 @@ nmap:
 chkrootkit:
   Zainstalowana: (brak)
   Kandydująca:   0.53-2
+rsync:
+  Zainstalowana: 3.2.3-2
+  Kandydująca:   3.2.3-2
 sqlmap:
   Zainstalowana: 1.4.9-1
   Kandydująca:   1.4.12-1
