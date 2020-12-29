@@ -1,3 +1,6 @@
+rsync:
+  Zainstalowana: 3.2.3-2
+  Kandydująca:   3.2.3-2
 gufw:
   Zainstalowana: (brak)
   Kandydująca:   20.04.1-1
@@ -19,11 +22,8 @@ nmap:
 chkrootkit:
   Zainstalowana: (brak)
   Kandydująca:   0.53-2
-rsync:
-  Zainstalowana: 3.2.3-2
-  Kandydująca:   3.2.3-2
 sqlmap:
-  Zainstalowana: 1.4.9-1
+  Zainstalowana: 1.4.8-1
   Kandydująca:   1.4.12-1
 burpsuite:
   Zainstalowana: 2020.8.1-0kali1
@@ -37,9 +37,6 @@ dotdotpwn:
 openvas:
   Zainstalowana: (brak)
   Kandydująca:   20.8.0.0~kali3
-nmap:
-  Zainstalowana: 7.80+dfsg1-5kali1
-  Kandydująca:   7.91+dfsg1-1kali1
 cisco-torch:
   Zainstalowana: (brak)
   Kandydująca:   0.4b-1kali5
@@ -50,7 +47,7 @@ arp-scan:
   Zainstalowana: 1.9.7-1
   Kandydująca:   1.9.7-1
 braa:
-  Zainstalowana: (brak)
+  Zainstalowana: 0.82-5
   Kandydująca:   0.82-5
 maltego:
   Zainstalowana: 4.2.12.13389-0kali1
