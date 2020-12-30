@@ -85,7 +85,7 @@ countUpToDate=0
 countOutdated=0
 countNotInstalled=0
 
-for (( n=1; $n <= $[SoftwareData/3] ; n++ ))
+for (( n=1; n <= $[SoftwareData/3] ; n++ ))
 do
 	SNL=$[n+(n-1)*2]
 	SoftName=`sed -n ${SNL}p ./BPD_SoftwaresData.txt | tr -d ':'`
@@ -145,7 +145,7 @@ echo ""
 
 if [ $countNotInstalled -gt 0 ] ; then
 	echo -e "\e[1m\e[91mList of not installed recomended softwares:\e[0m"
-	for (( i=0 ; $i<${#aNotInstalled[@]} ; i++ ))
+	for (( i=0 ; i<${#aNotInstalled[@]} ; i++ ))
 	do
 		if [ ${#aNotInstalled[i]} -lt 8 ] ; then
 			echo -e "\e[91m${aNotInstalled[i]}\t\t newest version is: ${aNewest_Version_Not_Installed[i]} \e[0m"
@@ -159,7 +159,7 @@ echo ""
 
 if [ $countOutdated -gt 0 ] ; then
 	echo -e "\e[1m\e[93mList of recomended softwares that are installed and outdated:\e[0m"
-	for (( j=0 ; $j<${#aOutdated[@]} ; j++ ))
+	for (( j=0 ; j<${#aOutdated[@]} ; j++ ))
 	do
 		if [ ${#aOutdated[j]} -lt 8 ] ; then
 			echo -e "\e[93m${aOutdated[j]}\t\t newest version is: ${aNewest_Version_Outdated[j]} and your version is: ${aInstalled_Outdated[j]}\e[0m"
@@ -173,7 +173,7 @@ echo ""
 
 if [ $countUpToDate -gt 0 ] ; then
 	echo -e "\e[1m\e[92mList of recomended installed softwares that are up to date:\e[0m"
-	for (( k=0 ; $k<${#aUpToDate[@]} ; k++ ))
+	for (( k=0 ; k<${#aUpToDate[@]} ; k++ ))
 	do
 		if [ ${#aUpToDate[k]} -lt 8 ] ; then
 			echo -e "\e[92m${aUpToDate[k]}\t\t newest version is: ${aNewest_Up_To_Date[k]}\e[0m"

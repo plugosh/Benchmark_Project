@@ -112,7 +112,10 @@ if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
 	echo -n "Do you want to install them automatically? [Y/n]: "
 	read -n1 ans4
 	echo ""
+
 fi
+
+	echo ""
 
 if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
 	echo "Some of recomended softwares are not up to date on your OS."
@@ -123,6 +126,10 @@ fi
 
 if [ $ans4 == "y" -o $ans4 == "Y" ] ; then
 	echo -e "\e[1m\e[34mProgram is going to install missing packets. Please wait.\e[0m"
+	echo -e "\e[1mInstallation will be performed by sudo apt-get install command.\e[0m"
+	echo -e "\e[1mYou may need to enter your user password to continue.\e[0m"
+	echo -e "\e[1mSome softwares will need your permission to install.\e[0m"
+
 	./BP_InstallSoftwares.sh
 fi
 

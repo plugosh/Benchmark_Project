@@ -5,10 +5,10 @@ gufw:
   Zainstalowana: (brak)
   Kandydująca:   20.04.1-1
 firejail:
-  Zainstalowana: (brak)
+  Zainstalowana: 0.9.64-1
   Kandydująca:   0.9.64-1
 keepassx:
-  Zainstalowana: (brak)
+  Zainstalowana: 2.0.3+git20190121.1682ab9-2.2
   Kandydująca:   2.0.3+git20190121.1682ab9-2.2
 clamav:
   Zainstalowana: (brak)
@@ -20,7 +20,7 @@ nmap:
   Zainstalowana: 7.80+dfsg1-5kali1
   Kandydująca:   7.91+dfsg1-1kali1
 chkrootkit:
-  Zainstalowana: (brak)
+  Zainstalowana: 0.53-2
   Kandydująca:   0.53-2
 sqlmap:
   Zainstalowana: 1.4.9-1
@@ -29,7 +29,7 @@ burpsuite:
   Zainstalowana: 2020.8.1-0kali1
   Kandydująca:   2020.9.1-0kali1
 bed:
-  Zainstalowana: (brak)
+  Zainstalowana: 0.5-1kali6
   Kandydująca:   0.5-1kali6
 dotdotpwn:
   Zainstalowana: (brak)

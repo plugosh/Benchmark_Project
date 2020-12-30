@@ -1,2 +1,6 @@
 rsync
+firejail
+keepassx
+chkrootkit
+bed
 arp-scan

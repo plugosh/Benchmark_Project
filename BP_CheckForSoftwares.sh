@@ -22,7 +22,7 @@ SoftwareCount=`wc -l < ./BPB_SoftwareList.txt`
 
 > BPD_SoftwaresData.txt
 
-for (( n=1; $n <= $SoftwareCount/2+1 ; n++ ))
+for (( n=1; n <= $SoftwareCount/2+1 ; n++ ))
 do
 	apt-cache policy `sed -n ${n}p ./BPB_SoftwareList.txt` | head -3 >> BPD_SoftwaresData.txt
 done
