@@ -23,7 +23,7 @@ chkrootkit:
   Zainstalowana: (brak)
   Kandydująca:   0.53-2
 sqlmap:
-  Zainstalowana: 1.4.8-1
+  Zainstalowana: 1.4.9-1
   Kandydująca:   1.4.12-1
 burpsuite:
   Zainstalowana: 2020.8.1-0kali1
@@ -47,7 +47,7 @@ arp-scan:
   Zainstalowana: 1.9.7-1
   Kandydująca:   1.9.7-1
 braa:
-  Zainstalowana: 0.82-5
+  Zainstalowana: (brak)
   Kandydująca:   0.82-5
 maltego:
   Zainstalowana: 4.2.12.13389-0kali1

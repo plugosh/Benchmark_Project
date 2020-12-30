@@ -1,0 +1,11 @@
+gufw
+firejail
+keepassx
+clamav
+chkrootkit
+bed
+dotdotpwn
+openvas
+cisco-torch
+beef
+braa

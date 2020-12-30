@@ -1,0 +1,5 @@
+wireshark
+nmap
+sqlmap
+burpsuite
+maltego

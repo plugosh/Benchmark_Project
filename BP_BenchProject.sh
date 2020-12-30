@@ -33,9 +33,10 @@ echo -e "        \e[7m\e[95m██▒▒██\e[0m        \e[7m\e[95m██▒�
 echo -e "        \e[7m\e[95m██████\e[0m        \e[7m\e[95m██████\e[0m      "
 echo -e "                                    "
 
-
-
-
+if [ ! -x ./BP_CheckCurrentVersion.sh -o ! -x ./BP_CheckForSoftwares.sh -o ! -x ./BP_SoftwareFiltering.sh -o ! -x ./BP_InstallSoftwares.sh -o ! -x ./BP_UpdateSoftwares.sh ] ; then
+	echo "Error. One of program scripts can not be executed."
+	exit 0
+fi
 
 agubool=false
 
@@ -99,8 +100,33 @@ if [ ! -e ./BP_CheckForSoftwares.sh ] ; then
 	exit 0
 fi
 
-./BP_CheckForSoftwares.sh
-
 echo -e "\e[34mScanning in progress. Please wait.\e[0m"
 
+./BP_CheckForSoftwares.sh
 ./BP_SoftwareFiltering.sh
+
+echo ""
+
+if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
+	echo "Some of recomended softwares are not installed on your OS."
+	echo -n "Do you want to install them automatically? [Y/n]: "
+	read -n1 ans4
+	echo ""
+fi
+
+if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
+	echo "Some of recomended softwares are not up to date on your OS."
+	echo -n "Do you want to update them automatically? [Y/n]: "
+	read -n1 ans5
+	echo ""
+fi
+
+if [ $ans4 == "y" -o $ans4 == "Y" ] ; then
+	echo -e "\e[1m\e[34mProgram is going to install missing packets. Please wait.\e[0m"
+	./BP_InstallSoftwares.sh
+fi
+
+if [ $ans5 == "y" -o $ans5 == "Y" ] ; then
+	echo -e "\e[1m\e[34mProgram is going to update outdated packets. Please wait.\e[0m"
+	./BP_UpdateSoftwares.sh
+fi
