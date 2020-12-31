@@ -26,7 +26,7 @@ sqlmap:
   Zainstalowana: 1.4.9-1
   Kandydująca:   1.4.12-1
 burpsuite:
-  Zainstalowana: 2020.8.1-0kali1
+  Zainstalowana: 2020.9.1-0kali1
   Kandydująca:   2020.9.1-0kali1
 bed:
   Zainstalowana: 0.5-1kali6
@@ -47,8 +47,8 @@ arp-scan:
   Zainstalowana: 1.9.7-1
   Kandydująca:   1.9.7-1
 braa:
-  Zainstalowana: (brak)
+  Zainstalowana: 0.82-5
   Kandydująca:   0.82-5
 maltego:
-  Zainstalowana: 4.2.12.13389-0kali1
+  Zainstalowana: 4.2.14.13579-0kali1
   Kandydująca:   4.2.14.13579-0kali1

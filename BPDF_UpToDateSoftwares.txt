@@ -2,5 +2,8 @@ rsync
 firejail
 keepassx
 chkrootkit
+burpsuite
 bed
 arp-scan
+braa
+maltego
