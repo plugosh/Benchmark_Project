@@ -33,7 +33,7 @@ echo -e "        \e[7m\e[95m██▒▒██\e[0m        \e[7m\e[95m██▒�
 echo -e "        \e[7m\e[95m██████\e[0m        \e[7m\e[95m██████\e[0m      "
 echo -e "                                    "
 
-if [ ! -x ./BP_CheckCurrentVersion.sh -o ! -x ./BP_CheckForSoftwares.sh -o ! -x ./BP_SoftwareFiltering.sh -o ! -x ./BP_InstallSoftwares.sh -o ! -x ./BP_UpdateSoftwares.sh ] ; then
+if [ ! -x ./BP_CheckCurrentVersion.sh ! -x ./BP_FullScan.sh -o ! -x ./BP_CheckForSoftwares.sh -o ! -x ./BP_SoftwareFiltering.sh -o ! -x ./BP_InstallSoftwares.sh -o ! -x ./BP_UpdateSoftwares.sh ] ; then
 	echo "Error. One of program scripts can not be executed."
 	exit 0
 fi
@@ -100,40 +100,64 @@ if [ ! -e ./BP_CheckForSoftwares.sh ] ; then
 	exit 0
 fi
 
-echo -e "\e[34mScanning in progress. Please wait.\e[0m"
-
-./BP_CheckForSoftwares.sh
-./BP_SoftwareFiltering.sh
-
+echo -n "Do you want to check if our recomended softwares are installed and up to date on your OS? [Y/n]: "
+read -n1 ans100
 echo ""
 
-if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
-	echo "Some of recomended softwares are not installed on your OS."
-	echo -n "Do you want to install them automatically? [Y/n]: "
-	read -n1 ans4
+if [ $ans100 == "y" -o $ans100 == "Y" ] ; then
+	echo -e "\e[34mScanning in progress. Please wait.\e[0m"
+
+	./BP_CheckForSoftwares.sh
+	./BP_SoftwareFiltering.sh
+	
 	echo ""
 
+	if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
+		echo "Some of recomended softwares are not installed on your OS."
+		echo -n "Do you want to install them automatically? [Y/n]: "
+		read -n1 ans4
+		echo ""
+
+	fi
+	
+		echo ""
+
+	if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
+		echo "Some of recomended softwares are not up to date on your OS."
+		echo -n "Do you want to update them automatically? [Y/n]: "
+		read -n1 ans5
+		echo ""
+	fi
+	
+	if [ $ans4 == "y" -o $ans4 == "Y" ] ; then
+		echo -e "\e[1m\e[34mProgram is going to install missing packets. Please wait.\e[0m"
+		echo -e "\e[1mInstallation will be performed by sudo apt-get install command.\e[0m"
+		echo -e "\e[1mYou may need to enter your user password to continue.\e[0m"
+		echo -e "\e[1mSome softwares will need your permission to install.\e[0m"
+
+		./BP_InstallSoftwares.sh
+	fi
+	
+	if [ $ans5 == "y" -o $ans5 == "Y" ] ; then
+		echo -e "\e[1m\e[34mProgram is going to update outdated packets. Please wait.\e[0m"
+		./BP_UpdateSoftwares.sh
+	fi
 fi
 
-	echo ""
+scounter=`dpkg -l | wc -l`
+scounter=$[scounter - 6]
 
-if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
-	echo "Some of recomended softwares are not up to date on your OS."
-	echo -n "Do you want to update them automatically? [Y/n]: "
-	read -n1 ans5
-	echo ""
-fi
+echo -e "You have \e[1m$scounter\e[0m installed softwares that may need to be updated."
+echo -e "Do you want to update \e[1m\e[31mALL\e[0m packets installed on your system?"
+echo -e "You will need to interact with the system and updating process may take a long time: "
+read -n1 ans50
+echo ""
 
-if [ $ans4 == "y" -o $ans4 == "Y" ] ; then
-	echo -e "\e[1m\e[34mProgram is going to install missing packets. Please wait.\e[0m"
-	echo -e "\e[1mInstallation will be performed by sudo apt-get install command.\e[0m"
-	echo -e "\e[1mYou may need to enter your user password to continue.\e[0m"
-	echo -e "\e[1mSome softwares will need your permission to install.\e[0m"
+if [ $ans50 == "y" -o $ans50 == "Y" ] ; then
 
-	./BP_InstallSoftwares.sh
-fi
+	./BP_FullScan.sh
 
-if [ $ans5 == "y" -o $ans5 == "Y" ] ; then
-	echo -e "\e[1m\e[34mProgram is going to update outdated packets. Please wait.\e[0m"
-	./BP_UpdateSoftwares.sh
-fi
+done
+
+
+#WYCZYSC WSZYSTKIE PLIKI

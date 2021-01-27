@@ -1,3 +1,6 @@
+rsync
 wireshark
 nmap
+chkrootkit
 sqlmap
+burpsuite
