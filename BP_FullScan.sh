@@ -1,6 +1,7 @@
 #!/bin/bash
 
 > BPD_FullList.txt
+> BPDAF_ToUpdate.txt
 
 fail=0
 success=0
@@ -9,27 +10,35 @@ dpkg -l | cut -d ' ' -f3-3 >> ./BPD_FullList.txt
 
 Linecounter=`wc -l < ./BPD_FullList.txt`
 
-possible=0
-impossible=0
 
-for (( i = 7; i <$Linecounter; i++ )); do
+PLG=`cat /etc/default/locale | grep "pl_"`
+ELG=`cat /etc/default/locale | grep "en_"`
 
-	#`sed -n ${i}p ./BPD_FullList.txt`
+ISPL=${#PLG}
+ISEN=${#ELG}
 
-	COutput=$(apt-cache policy `sed -n ${i}p ./BPD_FullList.txt`)
-	#echo "$COutput"
-#num=$(($num1 + $num2))
-	if [[ -z "$COutput" ]]; then
-		impossible=$(($impossible+1))
-	else
-		
-		possible=$(($possible+1))
-	fi
-	#sudo apt-get install `sed -n ${i}p ./BPD_FullList.txt`
+LCount=$(($Linecounter-6))
 
-	#echo "$i"
+TUpd=0
+n=0
+
+
+
+	echo -e "\e[93m\e[1mUpdating in progress."
+for (( i = 7; i <=Linecounter; i++ )); do
+
+	echo -e "____________________________________________________________________"
+
+	sudo apt-get install -y `sed -n ${i}p ./BPD_FullList.txt`
+	
+	progress=$(( $i * 100 / $LCount ))
+	echo -ne "$progress % of your $LCount programs have been checked\r"
 
 done
 
-echo "$possible"
-echo "$impossible"
+echo -e "\e[92mUpdating finished successfully.\e[0m"
+
+
+
+
+	

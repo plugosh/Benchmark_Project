@@ -134,6 +134,7 @@ if [ $ans100 == "y" -o $ans100 == "Y" ] ; then
 		echo -e "\e[1mInstallation will be performed by sudo apt-get install command.\e[0m"
 		echo -e "\e[1mYou may need to enter your user password to continue.\e[0m"
 		echo -e "\e[1mSome softwares will need your permission to install.\e[0m"
+		echo ""
 
 		./BP_InstallSoftwares.sh
 	fi
@@ -141,23 +142,28 @@ if [ $ans100 == "y" -o $ans100 == "Y" ] ; then
 	if [ $ans5 == "y" -o $ans5 == "Y" ] ; then
 		echo -e "\e[1m\e[34mProgram is going to update outdated packets. Please wait.\e[0m"
 		./BP_UpdateSoftwares.sh
+		echo ""
 	fi
 fi
+
+echo ""
 
 scounter=`dpkg -l | wc -l`
 scounter=$[scounter - 6]
 
 echo -e "You have \e[1m$scounter\e[0m installed softwares that may need to be updated."
 echo -e "Do you want to update \e[1m\e[31mALL\e[0m packets installed on your system?"
-echo -e "You will need to interact with the system and updating process may take a long time: "
+echo -e "You may need to interact with the system."
+echo -e "Only packages that will be affected are these outdated."
+echo -e "Time to update all packages may take a long time [Y/n]: "
 read -n1 ans50
 echo ""
 
 if [ $ans50 == "y" -o $ans50 == "Y" ] ; then
 
 	./BP_FullScan.sh
-
-done
+	echo ""
+fi
 
 
 #WYCZYSC WSZYSTKIE PLIKI
