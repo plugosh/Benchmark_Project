@@ -1,6 +1,5 @@
-firejail
+rsync
+gufw
 keepassx
-bed
 arp-scan
 braa
-maltego

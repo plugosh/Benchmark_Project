@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod +x ./BP_* #making all BP_ project files as executeable
+chmod +x ./Scripts/BP_* #making all BP_ project files as executeable
 
 echo -e "                                    "
 echo -e "                    \e[7m\e[95m██████\e[0m     "
@@ -33,58 +33,62 @@ echo -e "        \e[7m\e[95m██▒▒██\e[0m        \e[7m\e[95m██▒�
 echo -e "        \e[7m\e[95m██████\e[0m        \e[7m\e[95m██████\e[0m      "
 echo -e "                                    "
 
+cd Scripts #changing directory
+
+#Error control
 if [ ! -x ./BP_CheckCurrentVersion.sh ! -x ./BP_FullScan.sh -o ! -x ./BP_CheckForSoftwares.sh -o ! -x ./BP_SoftwareFiltering.sh -o ! -x ./BP_InstallSoftwares.sh -o ! -x ./BP_UpdateSoftwares.sh ] ; then
 	echo "Error. One of program scripts can not be executed."
 	exit 0
 fi
 
+#apt-get update bool, by default false
 agubool=false
 
 echo -e "\e[1m\e[34mWelcome to Software Updater by Plugosh and Gungo\e[0m"
 
 echo -e "\e[1m\e[31mBefore using this program please use 'apt-get update' command\e[0m"
 echo -e "\e[1m\e[31mThis program could not work properly without applying 'apt-get update command'.\e[0m"
-echo -n "Has the command 'apt-get update' already been used? [Y/n]: "
+echo -n "Has the command 'apt-get update' already been used? [Y/n]: "	#Asking if a-g update has been used
 read -n1 ans
 echo ""
 echo ""
 
 
 if [ $ans == "n" -o $ans == "N" ] ; then
-	echo -n "Do you want to apply 'apt-get update' now? [Y/n]: "
+	echo -n "Do you want to apply 'apt-get update' now? [Y/n]: "	#Asking user if he wants to execute a-g update command
 	read -n1 ans2
 	echo ""
 	echo ""
 
 	if [ $ans2 == "y" -o $ans2 == "Y" ] ; then
 		sudo apt-get update
-		agubool=true
+		agubool=true	#setting agubool as true
 
 	else
-		agubool=false
+		agubool=false	#setting agubool as false
 	fi
 
 
 elif [ $ans == "y" -o $ans == "Y" ] ; then
-	agubool=true
+	agubool=true 	#setting agubool as true
 
 else
-	agubool=false
+	agubool=false 	#setting agubool as false
 fi
 
 if [ $agubool == "false" ] ; then
-	echo "This program could not work properly without applying 'apt-get update command'."
+	echo "This program could not work properly without applying 'apt-get update command'."	#warning about possible errors
 	echo ""
-	echo -n "Do you still want to continue? Choosing option 'no' will terminate this program [Y/n]: "
+	echo -n "Do you still want to continue? Choosing option 'no' will terminate this program [Y/n]: "	#final ask in case aguboll=false
 	read -n1 ans3
 	echo ""
 	if [ $ans3 == "n" -o $ans3 == "N" ] ; then
-		echo "Process terminated by user"
+		echo "Process terminated by user"	#terminating process
 		exit 100 
 	fi
 fi
 
-#Checking system version
+#Checking system version, not really needed
 
 if [ ! -e ./BP_CheckCurrentVersion.sh ] ; then
 	echo "\e[41mError. File 'BP_CheckCurrentVersion.sh' is not valid."
@@ -100,21 +104,21 @@ if [ ! -e ./BP_CheckForSoftwares.sh ] ; then
 	exit 0
 fi
 
-echo -n "Do you want to check if our recomended softwares are installed and up to date on your OS? [Y/n]: "
+echo -n "Do you want to check if our recomended softwares are installed and up to date on your OS? [Y/n]: "	
 read -n1 ans100
 echo ""
 
 if [ $ans100 == "y" -o $ans100 == "Y" ] ; then
 	echo -e "\e[34mScanning in progress. Please wait.\e[0m"
 
-	./BP_CheckForSoftwares.sh
-	./BP_SoftwareFiltering.sh
+	./BP_CheckForSoftwares.sh 	#executing BP_CheckForSoftwares
+	./BP_SoftwareFiltering.sh 	#executing BP_SoftwareFiltering
 	
 	echo ""
 
 	if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
 		echo "Some of recomended softwares are not installed on your OS."
-		echo -n "Do you want to install them automatically? [Y/n]: "
+		echo -n "Do you want to install them automatically? [Y/n]: " 		#asking if user wants to install recomended softwares
 		read -n1 ans4
 		echo ""
 
@@ -122,9 +126,9 @@ if [ $ans100 == "y" -o $ans100 == "Y" ] ; then
 	
 		echo ""
 
-	if [ `wc -l < ./BPDF_NotInstalledSoftwares.txt` -gt 0 ] ; then
+	if [ `wc -l < ./BPDF_OutdatedSoftwares.txt` -gt 0 ] ; then
 		echo "Some of recomended softwares are not up to date on your OS."
-		echo -n "Do you want to update them automatically? [Y/n]: "
+		echo -n "Do you want to update them automatically? [Y/n]: "		#asking if user wants to uptade recomended softwares
 		read -n1 ans5
 		echo ""
 	fi
@@ -136,12 +140,12 @@ if [ $ans100 == "y" -o $ans100 == "Y" ] ; then
 		echo -e "\e[1mSome softwares will need your permission to install.\e[0m"
 		echo ""
 
-		./BP_InstallSoftwares.sh
+		./BP_InstallSoftwares.sh 	#executing BP_InstallSoftwares
 	fi
 	
 	if [ $ans5 == "y" -o $ans5 == "Y" ] ; then
 		echo -e "\e[1m\e[34mProgram is going to update outdated packets. Please wait.\e[0m"
-		./BP_UpdateSoftwares.sh
+		./BP_UpdateSoftwares.sh  	#executing BP_UpdateSoftwares
 		echo ""
 	fi
 fi
@@ -161,9 +165,20 @@ echo ""
 
 if [ $ans50 == "y" -o $ans50 == "Y" ] ; then
 
-	./BP_FullScan.sh
+	./BP_FullScan.sh  	#executing BP_FullScan
 	echo ""
 fi
 
+#cleaning all files
 
-#WYCZYSC WSZYSTKIE PLIKI
+> BPDF_NotInstalledSoftwares.txt 
+> BPD_FullList.txt
+> BPD_NotInstalledSoftwares.txt
+> BPD_SystemVersionData.txt
+> BPDF_OutdatedSoftwares.txt
+> BPDF_UpToDateSoftwares.txt
+> BPD_SoftwaresData.txt
+
+
+
+cd ..

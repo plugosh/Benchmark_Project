@@ -1,6 +1,5 @@
-rsync
 wireshark
 nmap
-chkrootkit
 sqlmap
 burpsuite
+maltego

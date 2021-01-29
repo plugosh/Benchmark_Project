@@ -1,5 +1,7 @@
-gufw
+firejail
 clamav
+chkrootkit
+bed
 dotdotpwn
 openvas
 cisco-torch

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#error control
 if [ ! -e ./BPD_SoftwaresData.txt ] ; then
 	echo "Error. BPD_SoftwaresData.txt file is not valid."
 	exit 0
@@ -107,35 +108,32 @@ do
 		SoftNewVer=`sed -n ${SNV}p ./BPD_SoftwaresData.txt | cut -d ' ' -f4-`	#May be errors
 	fi
 
-
+#Creating arrays that group recomended softwers
 	aSoftware[n-1]="$SoftName"
 	aSoftInst[n-1]="$SoftInsVer"
 	aSoftNewV[n-1]="$SoftNewVer"
 
-	#echo "${aSoftware[n-1]}"
-	#echo "${aSoftInst[n-1]}"
-	#echo "${aSoftNewV[n-1]}"
 
 
 	if [ ${aSoftInst[n-1]} == "(brak)" -o ${aSoftInst[n-1]} == "(none)" ] ; then	#PL and EN
 		aNotInstalled[countNotInstalled]=${aSoftware[n-1]}
-		aNewest_Version_Not_Installed[countNotInstalled]=${aSoftNewV[n-1]}
-		countNotInstalled=$[countNotInstalled+1]
+		aNewest_Version_Not_Installed[countNotInstalled]=${aSoftNewV[n-1]} 	#This "if" writes down all not installed
+		countNotInstalled=$[countNotInstalled+1] 							#softwares into BPDF_NotInstalledSoftwares file
 		echo "${aSoftware[n-1]}" >> BPDF_NotInstalledSoftwares.txt
 	else
 		if [ ${aSoftInst[n-1]} == ${aSoftNewV[n-1]} ] ; then
-			aUpToDate[countUpToDate]=${aSoftware[n-1]}
-			aNewest_Up_To_Date[countUpToDate]=${aSoftNewV[n-1]}
+			aUpToDate[countUpToDate]=${aSoftware[n-1]}  					#This "if" writes down all up to date
+			aNewest_Up_To_Date[countUpToDate]=${aSoftNewV[n-1]}    			#softwares into BPDF_UpToDateSoftwares file
 			countUpToDate=$[countUpToDate+1]
 			echo "${aSoftware[n-1]}" >> BPDF_UpToDateSoftwares.txt
-			#echo "up ${aSoftware[n-1]}"
+
 		else
 			aOutdated[countOutdated]=${aSoftware[n-1]}
-			aNewest_Version_Outdated[countOutdated]=${aSoftNewV[n-1]}
-			aInstalled_Outdated[countOutdated]=${aSoftInst[n-1]}
+			aNewest_Version_Outdated[countOutdated]=${aSoftNewV[n-1]} 		#This "if" writes down all outdated
+			aInstalled_Outdated[countOutdated]=${aSoftInst[n-1]}   			#softwares into BPDF_OutdatedSoftwares file
 			countOutdated=$[countOutdated+1]
 			echo "${aSoftware[n-1]}" >> BPDF_OutdatedSoftwares.txt
-			#echo "outdated ${aSoftware[n-1]} xxxxx ${aSoftInst[n-1]} xxxxx ${aSoftNewV[n-1]}"
+
 		fi
 	fi
 
@@ -143,6 +141,7 @@ done
 
 echo ""
 
+#Listing all not installed softwares for the user
 if [ $countNotInstalled -gt 0 ] ; then
 	echo -e "\e[1m\e[91mList of not installed recomended softwares:\e[0m"
 	for (( i=0 ; i<${#aNotInstalled[@]} ; i++ ))
@@ -157,6 +156,7 @@ fi
 
 echo ""
 
+#Listing all outdated softwares for the user
 if [ $countOutdated -gt 0 ] ; then
 	echo -e "\e[1m\e[93mList of recomended softwares that are installed and outdated:\e[0m"
 	for (( j=0 ; j<${#aOutdated[@]} ; j++ ))
@@ -171,6 +171,7 @@ fi
 
 echo ""
 
+#Listing all up to date softwares for the user
 if [ $countUpToDate -gt 0 ] ; then
 	echo -e "\e[1m\e[92mList of recomended installed softwares that are up to date:\e[0m"
 	for (( k=0 ; k<${#aUpToDate[@]} ; k++ ))
@@ -182,14 +183,3 @@ if [ $countUpToDate -gt 0 ] ; then
 		fi
 	done
 fi
-
-#${#array[@]}
-
-
-
-	#PL:								EN:
-	#software 							software
-	#	Zainstalowana:	(brak)				Installed:	(none)
-	#	Kandydująca:	1.2.3.4				Candidate:	1.2.3.4
-	#or
-	#	Zainstalowana:	1.2.3.3				Installed:	1.2.3.3

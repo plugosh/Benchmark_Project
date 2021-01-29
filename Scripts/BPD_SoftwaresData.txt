@@ -1,11 +1,11 @@
 rsync:
-  Zainstalowana: 3.2.3-2
+  Zainstalowana: 3.2.3-3
   Kandydująca:   3.2.3-3
 gufw:
-  Zainstalowana: (brak)
+  Zainstalowana: 20.04.1-1
   Kandydująca:   20.04.1-1
 firejail:
-  Zainstalowana: 0.9.64-1
+  Zainstalowana: (brak)
   Kandydująca:   0.9.64-1
 keepassx:
   Zainstalowana: 2.0.3+git20190121.1682ab9-2.2
@@ -20,16 +20,16 @@ nmap:
   Zainstalowana: 7.80+dfsg1-5kali1
   Kandydująca:   7.91+dfsg1-1kali1
 chkrootkit:
-  Zainstalowana: 0.53-2
+  Zainstalowana: (brak)
   Kandydująca:   0.54-1
 sqlmap:
-  Zainstalowana: 1.4.9-1
+  Zainstalowana: 1.4.8-1
   Kandydująca:   1.5-1
 burpsuite:
-  Zainstalowana: 2020.9.1-0kali1
+  Zainstalowana: 2020.8.1-0kali1
   Kandydująca:   2020.12.1-0kali1
 bed:
-  Zainstalowana: 0.5-1kali6
+  Zainstalowana: (brak)
   Kandydująca:   0.5-1kali6
 dotdotpwn:
   Zainstalowana: (brak)
@@ -50,5 +50,5 @@ braa:
   Zainstalowana: 0.82-5
   Kandydująca:   0.82-5
 maltego:
-  Zainstalowana: 4.2.14.13579-0kali1
+  Zainstalowana: 4.2.12.13389-0kali1
   Kandydująca:   4.2.14.13579-0kali1

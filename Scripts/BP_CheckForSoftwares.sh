@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+#Error control
 if [ ! -e ./BPD_SoftwaresData.txt ] ; then
 	touch ./BPD_SoftwaresData.txt
 	chmod +w ./BPD_SoftwaresData.txt
@@ -17,7 +17,7 @@ else
 	fi
 fi
 
-#TUTAJ PETLA CZYTAJACA PROGRAMY Z BPB_SOFTWARE LIST
+#Loop that is checking and writing recomended softwares versions into BPD_SoftwareData.txt file
 SoftwareCount=`wc -l < ./BPB_SoftwareList.txt`
 
 > BPD_SoftwaresData.txt
