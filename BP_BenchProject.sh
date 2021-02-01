@@ -33,7 +33,7 @@ echo -e "        \e[7m\e[95m██▒▒██\e[0m        \e[7m\e[95m██▒�
 echo -e "        \e[7m\e[95m██████\e[0m        \e[7m\e[95m██████\e[0m      "
 echo -e "                                    "
 
-cd Scripts #changing directory
+cd programfiles #changing directory
 
 #Error control
 if [ ! -x ./BP_CheckCurrentVersion.sh ! -x ./BP_FullScan.sh -o ! -x ./BP_CheckForSoftwares.sh -o ! -x ./BP_SoftwareFiltering.sh -o ! -x ./BP_InstallSoftwares.sh -o ! -x ./BP_UpdateSoftwares.sh ] ; then
